@@ -128,3 +128,8 @@ async def unban_user(message: types.Message):
 
     await message.delete()
     await service_message.delete()
+
+
+@dp.message(GroupFilter())
+async def send_user(msg: types.Message):
+    await msg.reply(msg.text)
